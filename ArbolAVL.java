@@ -52,8 +52,9 @@ class ArbolAVL {
         return (nodo == null) ? 0 : nodo.altura;
     }
 
-    // Factor de equilibrio
+    // Funcion  de equilibrio
     int balance(AVLNode nodo) {
+        // Segun la formula AlturaNodoIzquierda-AlturaNodoDerecho
         return (nodo == null) ? 0 : altura(nodo.izquierda) - altura(nodo.derecha);
     }
 
