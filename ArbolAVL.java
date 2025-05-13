@@ -13,7 +13,19 @@ class Cancion {
         this.autor = autor;
         this.album = album;
     }
-
+    public int getId(){
+        return this.id;
+    }
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+    public void setAutor(String autor){
+        this.autor = autor;
+               
+    }
+    public void setAlbum(String album){
+        this.album = album;
+    }
     public String toString() {
         return "ID: " + id + ", Nombre: " + nombre + ", Duración: " + duracion + ", Autor: " + autor + ", Álbum: " + album;
     }
