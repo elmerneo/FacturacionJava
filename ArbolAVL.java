@@ -164,17 +164,22 @@ class ArbolAVL {
         imprimirNodo(raiz, "", true);
     }
 
-    private void imprimirNodo(AVLNode nodo, String prefijo, boolean esUltimo) {
-        if (nodo == null) return;
-        System.out.println(prefijo + (esUltimo ? "└── " : "├── ") + "ID: " + nodo.cancion.id + ", Nombre: " + nodo.cancion.nombre);
-        String nuevoPrefijo = prefijo + (esUltimo ? "    " : "│   ");
-        if (nodo.izquierda != null || nodo.derecha != null) {
-            if (nodo.izquierda != null)
-                imprimirNodo(nodo.izquierda, nuevoPrefijo, nodo.derecha == null);
-            if (nodo.derecha != null)
-                imprimirNodo(nodo.derecha, nuevoPrefijo, true);
-        }
+private void imprimirNodo(AVLNode nodo, String prefijo, boolean esUltimo) {
+    if (nodo == null) return;
+
+    System.out.println(prefijo + (esUltimo ? "→ " : "↳ ") + "ID: " + nodo.cancion.id + ", Nombre: " + nodo.cancion.nombre);
+    String nuevoPrefijo = prefijo + (esUltimo ? "   " : "│  ");
+
+    if (nodo.izquierda != null || nodo.derecha != null) {
+        if (nodo.izquierda != null)
+            imprimirNodo(nodo.izquierda, nuevoPrefijo, nodo.derecha == null);
+        if (nodo.derecha != null)
+            imprimirNodo(nodo.derecha, nuevoPrefijo, true);
     }
+}
+
+
+    
 }
 
 // Clase principal
